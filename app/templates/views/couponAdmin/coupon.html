@@ -1,0 +1,149 @@
+<ion-view class="coupon" ng-init="couponInit()">
+    <div class="header">
+        <div class="hd-left">
+            <span class="ion-ios-arrow-left width100" ng-click="back();"></span>
+        </div>
+        <div class="hd-cnt font17">
+            <span>优惠券</span>
+        </div>
+        <div style="visibility:hidden" class="hd-right ion-ios-search-strong width100"  ng-click="goDrugSearch()"></div>
+    </div>
+
+    <div class="tab font14">
+        <div ng-repeat="item in dataTab">
+            <span ng-class="{spancolor:item.isColor}" ng-click="jumpTab(item,$index)" ng-bind="item.tabName"></span>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="con1" ng-show="con1">
+            <div ng-repeat="item in dataList">
+                <div class="conitem">
+                    <div class="conimg">
+                        <!-- <img src="images/yhjbj.png"> -->
+                        <div class="font16 txtcon">
+                            ¥ <span class="font31" ng-bind="item.Amount"></span>
+                        </div>
+                        <div class="font12 txtcon1">
+                            满<span ng-bind="item.NeedMoney"></span>可用
+                        </div>
+                    </div>
+                    <div class="context">
+                        <div class="text1 font16">
+                            <span ng-bind="item.couponStyle"></span>
+                        </div>
+                        <div class="text2 font12">
+                            <span ng-bind="item.couponDate"></span>
+                        </div>
+                        <div class="text3 font12">
+                            <span ng-click="jumpIon(item)">使用规则 <i ng-show="item.isIon" class="ion-ios-arrow-up"></i><i ng-show="!item.isIon" class="ion-ios-arrow-down"></i></span>
+                        </div>
+                    </div>
+                    <div class="divts">
+                        <!-- <img class="ts" src="images/yhjts.png"> -->
+                    </div>
+                </div>
+
+                <div ng-show="item.isIon" class="hidebox font12" style="color:#666666;background:#ffffff">
+                    <div style="overflow:hidden;padding:0 4%" ng-repeat="x in item.con">
+                        <span style="width:50%;margin-right:5%" ng-bind="x.leftCon"></span>
+                        <span style="width:50%" ng-bind="x.rightCon"></span>
+                    </div>
+<!--                     <div style="overflow:hidden;padding:0 4%">
+                        <span style="float:left">·仅支持诊间在线支付抵扣</span>
+                        <span style="float:right"></span>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+
+                  
+
+
+        <div class="con2" ng-show="con2">
+            <div ng-repeat="item in dataList">
+            <div class="conitem">
+                <div class="conimg">
+                    <!-- <img src="images/yhjbj.png"> -->
+                    <div class="font16 txtcon">
+                        ¥ <span class="font31"  ng-bind="item.Amount"></span>
+                    </div>
+                    <div class="font12 txtcon1">
+                        满<span ng-bind="item.NeedMoney"></span>可用
+                    </div>
+                </div>
+                <div class="context">
+                    <div class="text1 font16">
+                        <span ng-bind="item.couponStyle"></span>
+                    </div>
+                    <div class="text2 font12">
+                        <span ng-bind="item.couponDate"></span>
+                    </div>
+                    <div class="text3 font12">
+                        <span ng-click="jumpIon(item)">使用规则 <i ng-show="item.isIon" class="ion-ios-arrow-up"></i><i ng-show="!item.isIon" class="ion-ios-arrow-down"></i></span>
+                    </div>
+                </div>
+
+                <div class="divts">
+                    <img class="ts" src="images/yhjts.png">
+                </div>
+            </div>
+
+                <div ng-show="item.isIon" class="hidebox font12" style="color:#666666;background:#ffffff">
+                    <div style="overflow:hidden;padding:0 4%">
+                        <span style="float:left">·可与其它优惠券同时使用</span>
+                        <span style="float:right">·仅深圳用户使用</span>
+                    </div>
+                    <div style="overflow:hidden;padding:0 4%">
+                        <span style="float:left">·仅支持诊间在线支付抵扣</span>
+                        <span style="float:right"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="con3" ng-show="con3">
+            <div ng-repeat="item in dataList">
+            <div class="conitem">
+                <div class="conimg">
+                    <!-- <img src="images/yhjbj.png"> -->
+                    <div class="font16 txtcon">
+                        ¥ <span class="font31"  ng-bind="item.Amount"></span>
+                    </div>
+                    <div class="font12 txtcon1">
+                        满<span ng-bind="item.NeedMoney"></span>可用
+                    </div>
+                </div>
+                <div class="context">
+                    <div class="text1 font16">
+                        <span ng-bind="item.couponStyle"></span>
+                    </div>
+                    <div class="text2 font12">
+                        <span ng-bind="item.couponDate"></span>
+                    </div>
+                    <div class="text3 font12">
+                        <span ng-click="jumpIon(item)">使用规则 <i ng-show="item.isIon" class="ion-ios-arrow-up"></i><i ng-show="!item.isIon" class="ion-ios-arrow-down"></i></span>
+                    </div>
+                </div>
+
+                <div class="divts">
+                    <img class="ts" src="images/yhjts.png">
+                </div>
+            </div>
+
+                <div ng-show="item.isIon" class="hidebox font12" style="color:#666666;background:#ffffff">
+                    <div style="overflow:hidden;padding:0 4%">
+                        <span style="float:left">·可与其它优惠券同时使用</span>
+                        <span style="float:right">·仅深圳用户使用</span>
+                    </div>
+                    <div style="overflow:hidden;padding:0 4%">
+                        <span style="float:left">·仅支持诊间在线支付抵扣</span>
+                        <span style="float:right"></span>
+                    </div>
+                </div>
+        </div>
+
+    </div>
+
+</ion-view>

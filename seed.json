@@ -1,0 +1,9 @@
+[
+    "seed/bridge/$$.js",
+    "seed/bridge/extend/function.js",
+    "seed/bridge/lodash/lodash.js",
+    "seed/bridge/native/platformAdapter.js",
+    "seed/bridge/native/api.js",
+    "seed/bridge/native/eventListener.js",
+    "seed/lib/vendor.js"
+]
